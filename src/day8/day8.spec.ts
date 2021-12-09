@@ -1,4 +1,10 @@
-import { day8_1, day8_2, parseInput } from "./day8";
+import {
+  day8_1,
+  day8_2,
+  parseInput,
+  getValueFromEntry,
+  isSupersetOf,
+} from "./day8";
 
 const testInput = `be cfbegad cbdgef fgaecd cgeb fdcge agebfd fecdb fabcd edb | fdgacbe cefdb cefbgd gcbe
 edbfga begcd cbg gc gcadebf fbgde acbgfd abcde gfcbed gfec | fcgedb cgb dgebacf gc
@@ -64,8 +70,33 @@ describe("parseInput", () => {
   });
 });
 
-describe.skip("day8_2", () => {
-  test("it should return x given the example", () => {
-    expect(day8_2([])).toBe(0);
+describe("day8_2", () => {
+  test("it should return 61229 given the example", () => {
+    expect(day8_2(testInput)).toBe(61229);
+  });
+});
+
+describe("getValueFromEntry", () => {
+  test("it should find the correct value", () => {
+    expect(
+      getValueFromEntry([
+        "acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab",
+        "cdfeb fcadb cdfeb cdbaf",
+      ])
+    ).toBe(5353);
+  });
+});
+
+describe("isSubsetOf", () => {
+  test("it should return true if the first array is a superset of the second", () => {
+    expect(isSupersetOf(["c", "f", "s"], ["c", "f"])).toBe(true);
+  });
+
+  test("it should return true if the first array is a superset of the second, even if order is different", () => {
+    expect(isSupersetOf(["f", "s", "c"], ["c", "f"])).toBe(true);
+  });
+
+  test("it should return false if the first array is not a superset of the second", () => {
+    expect(isSupersetOf(["c", "f"], ["f", "s", "c"])).toBe(false);
   });
 });
