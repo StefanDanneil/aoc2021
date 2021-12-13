@@ -7,6 +7,7 @@ import { day6_1, day6_2 } from "./day6";
 import { day7_1, day7_2 } from "./day7";
 import { day8_1, day8_2 } from "./day8";
 import { day9_1, day9_2 } from "./day9";
+import { day10_1, day10_2 } from "./day10";
 
 const solutions = [
   day1_1,
@@ -27,6 +28,8 @@ const solutions = [
   day8_2,
   day9_1,
   day9_2,
+  day10_1,
+  day10_2,
 ];
 
 solutions.forEach((solution) => {
