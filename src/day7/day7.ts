@@ -11,6 +11,9 @@ export function day7_1(input: any = day7_input): number {
 
 export function getMedian(arr: number[]): number {
   const sortedArray = arr.sort((a, b) => {
+    if (a === b) {
+      return 0;
+    }
     return a > b ? 1 : -1;
   });
 

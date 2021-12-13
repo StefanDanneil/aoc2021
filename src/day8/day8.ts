@@ -75,10 +75,7 @@ export function getValueFromEntry(entry: string[]): number {
       // 0, 6 or 9
       if (isSupersetOf(arr, numberHelper.getNumber(4))) {
         numberHelper.addKnownNumber(d, 9);
-      } else if (
-        isSupersetOf(arr, numberHelper.getNumber(7)) &&
-        !isSupersetOf(arr, numberHelper.getNumber(4))
-      ) {
+      } else if (isSupersetOf(arr, numberHelper.getNumber(7))) {
         numberHelper.addKnownNumber(d, 0);
       } else {
         numberHelper.addKnownNumber(d, 6);
@@ -104,7 +101,7 @@ export function getValueFromEntry(entry: string[]): number {
   );
 }
 
-export function isSupersetOf(superset: any[], subset: any[]): boolean {
+export function isSupersetOf(superset: string[], subset: string[]): boolean {
   if (subset.filter((n) => !superset.includes(n)).length > 0) {
     return false;
   }
