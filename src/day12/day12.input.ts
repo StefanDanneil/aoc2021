@@ -1,5 +1,4 @@
-export const day12_input = [
-  `KF-sr
+export const day12_input = `KF-sr
 OO-vy
 start-FP
 FP-end
@@ -19,5 +18,4 @@ wp-KF
 mi-KF
 vy-sr
 vy-lh
-sr-mi`,
-];
+sr-mi`;
